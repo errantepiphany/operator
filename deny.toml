@@ -1,7 +1,10 @@
 [advisories]
 unmaintained = "all"
 maximum-db-staleness = "P30D"
-ignore = []
+ignore = [
+    # Remove when kube-client and gateway-api stop using serde_yaml.
+    { id = "RUSTSEC-2024-0449", reason = "No patched release; required transitively by kube-client and gateway-api" },
+]
 
 [licenses]
 allow = [
